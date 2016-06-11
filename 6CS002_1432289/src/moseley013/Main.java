@@ -765,7 +765,7 @@ public class Main {
           System.out.println("Creating new score table");
           try {
             PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
-            String n = playerName.replaceAll(",", "_");
+            playerName.replaceAll(",", "_");
             pw.print("Hugh Jass");
             pw.print(",");
             pw.print("1127569");
