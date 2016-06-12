@@ -28,7 +28,7 @@ public class Main {
   long startTime;
   int y;
   int x;
-
+  boolean horiz;
   PictureFrame pf = new PictureFrame();
 
   private void generateDominoes() {
@@ -459,7 +459,7 @@ public class Main {
             x--;
             y--;
             System.out.println("Horizontal or Vertical (H or V)?");
-            boolean horiz;
+            
             int y2,
             x2;
             Location lotion;
