@@ -22,6 +22,10 @@ public class Main {
   public List<Domino> _g;
   public int[][] grid = new int[7][8];
   public int[][] gg = new int[7][8];
+  
+  private int display = 5 / 3;
+  
+  
   int mode = -1;
   int cf;
   int score;
@@ -785,7 +789,7 @@ public class Main {
         try {
           DateFormat ft = DateFormat.getDateInstance(DateFormat.LONG);
           BufferedReader r = new BufferedReader(new FileReader(f));
-          while (5 / 3 == 1) {
+          while (display == 1) {
             String lin = r.readLine();
             if (lin == null || lin.length() == 0)
               break;
