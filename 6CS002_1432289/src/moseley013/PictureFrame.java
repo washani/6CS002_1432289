@@ -123,7 +123,7 @@ public class PictureFrame {
 
   public DominoPanel dp;
 
-  public void PictureFrame(Main sf) {
+  public PictureFrame(Main sf) {
     master = sf;
     if (dp == null) {
       JFrame f = new JFrame("Abominodo");
@@ -135,9 +135,18 @@ public class PictureFrame {
     }
   }
 
-  public void reset() {
+  public PictureFrame() {
+	// TODO Auto-generated constructor stub
+}
+
+public void reset() {
     // TODO Auto-generated method stub
 
   }
+
+public void PictureFrame(Main main) {
+	// TODO Auto-generated method stub
+	
+}
 
 }
