@@ -26,14 +26,16 @@ public class Main {
   int cf;
   int score;
   long startTime;
+  int y;
+  int x;
 
   PictureFrame pf = new PictureFrame();
 
   private void generateDominoes() {
     _d = new LinkedList<Domino>();
     int count = 0;
-    int x = 0;
-    int y = 0;
+    x = 0;
+    y = 0;
     for (int l = 0; l <= 6; l++) {
       for (int h = l; h <= 6; h++) {
         Domino d = new Domino(h, l);
@@ -56,8 +58,8 @@ public class Main {
   private void generateGuesses() {
     _g = new LinkedList<Domino>();
     int count = 0;
-    int x = 0;
-    int y = 0;
+    x = 0;
+    y = 0;
     for (int l = 0; l <= 6; l++) {
       for (int h = l; h <= 6; h++) {
         Domino d = new Domino(h, l);
@@ -146,8 +148,8 @@ public class Main {
   }
 
   private void placeDominoes() {
-    int x = 0;
-    int y = 0;
+    x = 0;
+    y = 0;
     int count = 0;
     for (Domino d : _d) {
       count++;
@@ -170,8 +172,8 @@ public class Main {
     // System.out.println("rotating " + d);
     // }
     // }
-    for (int x = 0; x < 7; x++) {
-      for (int y = 0; y < 6; y++) {
+    for (x = 0; x < 7; x++) {
+      for (y = 0; y < 6; y++) {
 
         tryToRotateDominoAt(x, y);
       }
@@ -439,12 +441,12 @@ public class Main {
             System.out.println("Where will the top left of the domino be?");
             System.out.println("Column?");
             // make sure the user enters something valid
-            int x = Location.getInt();
+            x = Location.getInt();
             while (x < 1 || x > 8) {
               x = Location.getInt();
             }
             System.out.println("Row?");
-            int y = gecko(98);
+            y = gecko(98);
             while (y < 1 || y > 7) {
               try {
                 String s3 = io.getString();
