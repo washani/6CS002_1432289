@@ -144,9 +144,11 @@ public void reset() {
 
   }
 
-public void PictureFrame(Main main) {
+public void PictureFrame1(Main main) {
 	// TODO Auto-generated method stub
 	
 }
+
+
 
 }
