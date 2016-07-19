@@ -34,6 +34,8 @@ public class Main {
   int x;
   boolean horiz;
   PictureFrame pf = new PictureFrame();
+  
+  Guess guess = new Guess();
 
   private void generateDominoes() {
     _d = new LinkedList<Domino>();
@@ -89,7 +91,7 @@ public class Main {
     }
   }
 
-  void collateGuessGrid() {
+/*  void collateGuessGrid() {
     for (int r = 0; r < 7; r++) {
       for (int c = 0; c < 8; c++) {
         gg[r][c] = 9;
@@ -101,7 +103,7 @@ public class Main {
         gg[d.ly][d.lx] = d.low;
       }
     }
-  }
+  }*/
 
   int pg() {
     for (int are = 0; are < 7; are++) {
@@ -392,7 +394,7 @@ public class Main {
         }
         pg();
         generateGuesses();
-        collateGuessGrid();
+        guess.collateGuessGrid();
         mode = 1;
         cf = 0;
         score = 0;
@@ -517,7 +519,7 @@ public class Main {
                 d.place(x2, y2, x, y);
               }
               score += 1000;
-              collateGuessGrid();
+              guess.collateGuessGrid();
               pf.dp.repaint();
             }
             break;
@@ -554,7 +556,7 @@ public class Main {
               gg[lkj.hy][lkj.hx] = 9;
               gg[lkj.ly][lkj.lx] = 9;
               score -= 1000;
-              collateGuessGrid();
+              guess.collateGuessGrid();
               pf.dp.repaint();
             }
             break;
