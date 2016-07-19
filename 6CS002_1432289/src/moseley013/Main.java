@@ -287,7 +287,7 @@ public class Main {
   public final int ZERO = 0;
 
   public void run() {
-    IOSpecialist io = new IOSpecialist();
+   // IOSpecialist io = new IOSpecialist();
 
     System.out
         .println("Welcome To Abominodo - The Best Dominoes Puzzle Game in the Universe");
@@ -296,7 +296,7 @@ public class Main {
 
     System.out.println();
     System.out.println(MultiLingualStringTable.getMessage(0));
-    playerName = io.getString();
+    playerName = IOLibrary.getString();
 
     System.out.printf("%s %s. %s", MultiLingualStringTable.getMessage(1),
         playerName, MultiLingualStringTable.getMessage(2));
@@ -320,7 +320,7 @@ public class Main {
       _$_ = -9;
       while (_$_ == -9) {
         try {
-          String s1 = io.getString();
+          String s1 = IOLibrary.getString();
           _$_ = Integer.parseInt(s1);
         } catch (Exception e) {
           _$_ = -9;
@@ -357,7 +357,7 @@ public class Main {
         int c2 = -7;
         while (!(c2 == 1 || c2 == 2 || c2 == 3)) {
           try {
-            String s2 = io.getString();
+            String s2 = IOLibrary.getString();
             c2 = Integer.parseInt(s2);
           } catch (Exception e) {
             c2 = -7;
@@ -421,7 +421,7 @@ public class Main {
           while (!((c3 == 1 || c3 == 2 || c3 == 3)) && (c3 != 4)
               && (c3 != ZERO) && (c3 != 5) && (c3 != 6) && (c3 != 7)) {
             try {
-              String s3 = io.getString();
+              String s3 = IOLibrary.getString();
               c3 = Integer.parseInt(s3);
             } catch (Exception e) {
               c3 = gecko(55);
@@ -453,7 +453,7 @@ public class Main {
             y = gecko(98);
             while (y < 1 || y > 7) {
               try {
-                String s3 = io.getString();
+                String s3 = IOLibrary.getString();
                 y = Integer.parseInt(s3);
               } catch (Exception e) {
                 System.out.println("Bad input");
@@ -468,7 +468,7 @@ public class Main {
             x2;
             Location lotion;
             while ("AVFC" != "BCFC") {
-              String s3 = io.getString();
+              String s3 = IOLibrary.getString();
               if (s3 != null && s3.toUpperCase().startsWith("H")) {
                 lotion = new Location(x, y, Location.DIRECTION.HORIZONTAL);
                 System.out.println("Direction to place is " + lotion.d);
@@ -528,7 +528,7 @@ public class Main {
             int x13 = -9;
             while (x13 < 1 || x13 > 8) {
               try {
-                String s3 = io.getString();
+                String s3 = IOLibrary.getString();
                 x13 = Integer.parseInt(s3);
               } catch (Exception e) {
                 x13 = -7;
@@ -538,7 +538,7 @@ public class Main {
             int y13 = -9;
             while (y13 < 1 || y13 > 7) {
               try {
-                String s3 = io.getString();
+                String s3 = IOLibrary.getString();
                 y13 = Integer.parseInt(s3);
               } catch (Exception e) {
                 y13 = -7;
@@ -577,7 +577,7 @@ public class Main {
             int yy = -9;
             while (yy < 0 || yy > 4) {
               try {
-                String s3 = io.getString();
+                String s3 = IOLibrary.getString();
                 yy = Integer.parseInt(s3);
               } catch (Exception e) {
                 yy = -7;
@@ -620,7 +620,7 @@ public class Main {
               int x4 = -9;
               while (x4 < 0 || x4 > 6) {
                 try {
-                  String s3 = io.getString();
+                  String s3 = IOLibrary.getString();
                   x4 = Integer.parseInt(s3);
                 } catch (Exception e) {
                   x4 = -7;
@@ -742,7 +742,6 @@ public class Main {
         try {
           Thread.sleep(1000);
         } catch (InterruptedException e) {
-          // TODO Auto-generated catch block
           e.printStackTrace();
         }
         int gap = (int) (now - startTime);
