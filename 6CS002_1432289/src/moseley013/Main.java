@@ -34,9 +34,10 @@ public class Main {
   int x;
   boolean horiz;
   PictureFrame pf = new PictureFrame();
-  
+  Common common = new Common();
   Guess guess = new Guess();
 
+  
   private void generateDominoes() {
     _d = new LinkedList<Domino>();
     int count = 0;
@@ -79,7 +80,7 @@ public class Main {
     }
   }
 
-  void collateGrid() {
+ void collateGrid() {
     for (Domino d : _d) {
       if (!d.placed) {
         grid[d.hy][d.hx] = 9;
@@ -173,11 +174,7 @@ public class Main {
   }
 
   private void rotateDominoes() {
-    // for (Domino d : dominoes) {
-    // if (Math.random() > 0.5) {
-    // System.out.println("rotating " + d);
-    // }
-    // }
+
     for (x = 0; x < 7; x++) {
       for (y = 0; y < 6; y++) {
 
@@ -809,30 +806,7 @@ public class Main {
         break;
 
       case 3: {
-        String h4 = "Rules";
-        String u4 = h4.replaceAll(".", "=");
-        System.out.println(u4);
-        System.out.println(h4);
-        System.out.println(u4);
-        System.out.println(h4);
-
-        JFrame f = new JFrame("Rules by Peter Moseley");
-
-        f.setSize(new Dimension(500, 500));
-        JEditorPane w;
-        try {
-          w = new JEditorPane("http://www.scit.wlv.ac.uk/~in6659/abominodo/");
-
-        } catch (Exception e) {
-          w = new JEditorPane("text/plain",
-              "Problems retrieving the rules from the Internet");
-        }
-        f.setContentPane(new JScrollPane(w));
-        f.setVisible(true);
-        f.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-        break;
-
+    	  common.help();
       }
       case 4:
         System.out
@@ -840,25 +814,11 @@ public class Main {
         InetAddress ipa = IOLibrary.getIPAddress();
         new ConnectionGenius(ipa).fireUpGame();
       }
-
     }
-
   }
 
   private void recordTheScore() {
-    try {
-      PrintWriter pw = new PrintWriter(new FileWriter("score.txt", true));
-      String n = playerName.replaceAll(",", "_");
-      pw.print(n);
-      pw.print(",");
-      pw.print(score);
-      pw.print(",");
-      pw.println(System.currentTimeMillis());
-      pw.flush();
-      pw.close();
-    } catch (Exception e) {
-      System.out.println("Something went wrong saving scores");
-    }
+	  common.helptry();
   }
 
   public static void main(String[] args) {
@@ -888,5 +848,4 @@ public class Main {
       pf.dp.drawDomino(g, d);
     }
   }
-  //1127569
 }
