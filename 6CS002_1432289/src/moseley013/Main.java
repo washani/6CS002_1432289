@@ -231,7 +231,9 @@ public class Main {
   }
 
   private boolean thisIsTopLeftOfDomino(int x, int y, Domino d) {
-    return (x == Math.min(d.lx, d.hx)) && (y == Math.min(d.ly, d.hy));
+	  boolean returnxminMath = (x == Math.min(d.lx, d.hx));
+	  boolean returnminyMath = (y == Math.min(d.ly, d.hy));
+    return returnxminMath && returnminyMath;
   }
 
   private Domino findDominoAt(int x, int y) {
