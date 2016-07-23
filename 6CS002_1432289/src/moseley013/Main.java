@@ -669,20 +669,7 @@ public class Main {
               HashMap<Domino, List<Location>> map = new HashMap<Domino, List<Location>>();
               for (int r = 0; r < 6; r++) {
                 for (int c = 0; c < 7; c++) {
-                  Domino hd = findGuessByLH(grid[r][c], grid[r][c + 1]);
-                  Domino vd = findGuessByLH(grid[r][c], grid[r + 1][c]);
-                  List<Location> l = map.get(hd);
-                  if (l == null) {
-                    l = new LinkedList<Location>();
-                    map.put(hd, l);
-                  }
-                  l.add(new Location(r, c));
-                  l = map.get(vd);
-                  if (l == null) {
-                    l = new LinkedList<Location>();
-                    map.put(vd, l);
-                  }
-                  l.add(new Location(r, c));
+                  case3Location(map, r, c);
                 }
               }
               for (Domino key : map.keySet()) {
@@ -701,20 +688,7 @@ public class Main {
               HashMap<Domino, List<Location>> map = new HashMap<Domino, List<Location>>();
               for (int r = 0; r < 6; r++) {
                 for (int c = 0; c < 7; c++) {
-                  Domino hd = findGuessByLH(grid[r][c], grid[r][c + 1]);
-                  Domino vd = findGuessByLH(grid[r][c], grid[r + 1][c]);
-                  List<Location> l = map.get(hd);
-                  if (l == null) {
-                    l = new LinkedList<Location>();
-                    map.put(hd, l);
-                  }
-                  l.add(new Location(r, c));
-                  l = map.get(vd);
-                  if (l == null) {
-                    l = new LinkedList<Location>();
-                    map.put(vd, l);
-                  }
-                  l.add(new Location(r, c));
+                  case3Location(map, r, c);
                 }
               }
               for (Domino key : map.keySet()) {
@@ -813,6 +787,23 @@ public class Main {
       }
     }
   }
+
+private void case3Location(HashMap<Domino, List<Location>> map, int r, int c) {
+	Domino hd = findGuessByLH(grid[r][c], grid[r][c + 1]);
+	  Domino vd = findGuessByLH(grid[r][c], grid[r + 1][c]);
+	  List<Location> l = map.get(hd);
+	  if (l == null) {
+	    l = new LinkedList<Location>();
+	    map.put(hd, l);
+	  }
+	  l.add(new Location(r, c));
+	  l = map.get(vd);
+	  if (l == null) {
+	    l = new LinkedList<Location>();
+	    map.put(vd, l);
+	  }
+	  l.add(new Location(r, c));
+}
 
   private void recordTheScore() {
 	  common.helptry();
