@@ -91,20 +91,22 @@ public class Main {
       }
     }
   }
-
-/*  void collateGuessGrid() {
-    for (int r = 0; r < 7; r++) {
-      for (int c = 0; c < 8; c++) {
-        gg[r][c] = 9;
-      }
-    }
-    for (Domino d : _g) {
-      if (d.placed) {
-        gg[d.hy][d.hx] = d.high;
-        gg[d.ly][d.lx] = d.low;
-      }
-    }
-  }*/
+ 
+ 
+ void collateGuessGrid() {
+	    for (int r = 0; r < 7; r++) {
+	      for (int c = 0; c < 8; c++) {
+	    	  gg[r][c] = 9;
+	      }
+	    }
+	    for (Domino d : _g) {
+	      if (d.placed) {
+	    	  gg[d.hy][d.hx] = d.high;
+	    	  gg[d.ly][d.lx] = d.low;
+	      }
+	    }
+	  }
+ 
 
   int pg() {
     for (int are = 0; are < 7; are++) {
@@ -200,10 +202,7 @@ public class Main {
             d.ly = y + 1;
             d.hy = y;
           }
-        }
       } else {
-        boolean weFancyARotation = Math.random() < 0.5;
-        if (weFancyARotation) {
           if (theCellToTheRightIsTopLeftOfVerticalDomino(x, y)) {
             Domino e = findDominoAt(x + 1, y);
             e.hx = x;
@@ -286,8 +285,6 @@ public class Main {
   public final int ZERO = 0;
 
   public void run() {
-   // IOSpecialist io = new IOSpecialist();
-
     System.out
         .println("Welcome To Abominodo - The Best Dominoes Puzzle Game in the Universe");
     System.out.println("Version 2.1 (c), Kevan Buckley, 2014");
@@ -391,7 +388,7 @@ public class Main {
         }
         pg();
         generateGuesses();
-        guess.collateGuessGrid();
+        collateGuessGrid();
         mode = 1;
         cf = 0;
         score = 0;
@@ -516,7 +513,7 @@ public class Main {
                 d.place(x2, y2, x, y);
               }
               score += 1000;
-              guess.collateGuessGrid();
+              collateGuessGrid();
               pf.dp.repaint();
             }
             break;
@@ -553,7 +550,7 @@ public class Main {
               gg[lkj.hy][lkj.hx] = 9;
               gg[lkj.ly][lkj.lx] = 9;
               score -= 1000;
-              guess.collateGuessGrid();
+              collateGuessGrid();
               pf.dp.repaint();
             }
             break;
